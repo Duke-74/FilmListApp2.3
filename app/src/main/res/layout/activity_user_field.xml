@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserField"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/UserFieldLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userFieldLogo"
+        android:textSize="30sp"
+        android:layout_margin="80dp"
+        android:textColor="@color/parchment"
+        />
+
+    <Button
+        android:id="@+id/AllFilms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/allFilms"
+        android:textColor="@color/parchment"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/chestnutTree"
+        />
+
+    <Button
+        android:id="@+id/FavoriteFilms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favoriteFilms"
+        android:textColor="@color/parchment"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/chestnutTree"
+        />
+
+    <Button
+        android:id="@+id/Exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:textColor="@color/parchment"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/chestnutTree"
+        />
+
+</LinearLayout>

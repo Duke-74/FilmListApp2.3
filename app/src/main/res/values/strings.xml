@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FilmListApp2</string>
+    <string name="AppLogo">Домашняя Фильмотека</string>
+    <string name="signInLogo">Авторизация</string>
+    <string name="allFilms">Все фильмы</string>
+    <string name="favoriteFilms">Избранные фильмы</string>
+    <string name="exit">Выйти</string>
+    <string name="userFieldLogo">Моя фильмотека</string>
+    <string name="registration">Регистрация</string>
+    <string name="registrationLogin">Логин</string>
+    <string name="registrationPass">Пароль</string>
+    <string name="registrationPassRep">Повторите пароль</string>
+    <string name="signUp">Зарегистрироваться</string>
+    <string name="registrationBack">Назад</string>
+    <string name="godFieldLogo">Добро пожаловать, товарищ Админ!</string>
+    <string name="adminLogo">Добро пожаловать, товарищ Админ</string>
+    <string name="usersList">Пользователи</string>
+    <string name="adminBack">Назад</string>
+</resources>

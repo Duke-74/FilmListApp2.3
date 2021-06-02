@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/Registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:textSize="30sp"
+        android:textColor="@color/parchment"/>
+
+    <EditText
+        android:id="@+id/RegistrationLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/registrationLogin"
+        android:textColorHint="@color/parchment"/>
+    <EditText
+        android:id="@+id/RegistrationPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registrationPass"
+        android:textColorHint="@color/parchment"/>
+
+    <EditText
+        android:id="@+id/RegistrationPassRep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registrationPassRep"
+        android:textColorHint="@color/parchment"/>
+
+    <Button
+        android:id="@+id/SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signUp"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/chestnutTree"/>
+
+    <Button
+        android:id="@+id/RegistrationBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrationBack"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/chestnutTree"/>
+
+</LinearLayout>

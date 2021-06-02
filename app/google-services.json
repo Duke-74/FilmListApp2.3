@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "512911391198",
+    "firebase_url": "https://filmlistapp2-default-rtdb.firebaseio.com",
+    "project_id": "filmlistapp2",
+    "storage_bucket": "filmlistapp2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512911391198:android:72230e7a136a00f580c54f",
+        "android_client_info": {
+          "package_name": "com.example.filmlistapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512911391198-a65lgui2t2u1b2bivui2uubem685u072.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.filmlistapp2",
+            "certificate_hash": "c15e99de19e28e2f123611c2f31a46e67ff630cc"
+          }
+        },
+        {
+          "client_id": "512911391198-ad1nv9pe4pmjmgj6e73l1alhoetog9u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPBRgUMfLU6P8TJbs43T6l0tEwKNyYAjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512911391198-ad1nv9pe4pmjmgj6e73l1alhoetog9u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

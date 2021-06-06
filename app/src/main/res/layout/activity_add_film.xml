@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn"
+    tools:context=".AddFilm"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/background">
 
     <TextView
-        android:id="@+id/SignInLogo"
+        android:id="@+id/AddFilmLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signInLogo"
-        android:textSize="30sp"
+        android:text="@string/addFilm"
         android:textColor="@color/parchment"
-        android:layout_marginTop="40dp"/>
+        android:textSize="30dp"
+        android:layout_margin="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,44 +25,51 @@
         android:gravity="center">
 
         <EditText
-            android:hint="Логин"
-            android:id="@+id/Login"
-            android:layout_margin="30dp"
+            android:id="@+id/AddFilmName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/parchment"/>
+            android:hint="Название фильма"
+            android:textColorHint="@color/parchment"
+            android:layout_margin="30dp"/>
 
         <EditText
-            android:hint="Пароль"
-            android:id="@+id/Pass"
-            android:layout_margin="30dp"
+            android:id="@+id/AddFilmDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Описание фильма"
             android:textColorHint="@color/parchment"
-            android:inputType="textPassword"/>
+            android:layout_margin="30dp"/>
 
         <Button
-            android:id="@+id/SignInButton"
-            android:layout_width="match_parent"
+            android:id="@+id/AddFilm"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Далее"
-            android:layout_margin="30dp"
+            android:text="@string/addFilm"
+            android:textColor="@color/parchment"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
+            android:id="@+id/AddFilmPoster"
+            android:layout_margin="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setImage"
             android:textColor="@color/parchment"
             android:backgroundTint="@color/chestnutTree"
             />
 
         <Button
-            android:id="@+id/AuthorizationBack"
-            android:layout_width="match_parent"
+            android:id="@+id/AddFilmBack"
+            android:layout_margin="40dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Назад"
-            android:layout_margin="30dp"
+            android:text="@string/adminBack"
             android:textColor="@color/parchment"
             android:backgroundTint="@color/chestnutTree"
             />
 
     </LinearLayout>
-
-
 
 </LinearLayout>

@@ -9,6 +9,12 @@ public class Film {
         this.poster = poster;
     }
 
+    public Film(){
+        this.name = "";
+        this.description = "";
+        this.poster = "";
+    }
+
     public String getName() {
         return name;
     }
@@ -25,4 +31,11 @@ public class Film {
         this.description = description;
     }
 
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
 }

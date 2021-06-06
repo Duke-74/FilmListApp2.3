@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".DeleteUser"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/DeleteUserByLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="@string/deleteUserByLogin"
+        android:textAlignment="center"
+        android:textColor="@color/parchment"
+        android:textSize="27dp" />
+
+    <EditText
+        android:hint="@string/LoginToDelete"
+        android:id="@+id/NameToDelete"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/parchment"/>
+
+    <EditText
+        android:hint="@string/ConfirmAdminPassword"
+        android:id="@+id/ConfirmPass"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/parchment"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_margin="40dp"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/chestnutTree"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/DeleteUserBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adminBack"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/chestnutTree"
+        />
+
+</LinearLayout>

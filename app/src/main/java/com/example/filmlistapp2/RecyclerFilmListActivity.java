@@ -19,6 +19,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RecyclerFilmListActivity extends AppCompatActivity {
 
     ImageView imagePoster;
@@ -27,21 +30,36 @@ public class RecyclerFilmListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_film_list);
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        List<Film> filmList = new ArrayList<>();
 
 
-
-        db.collection("users")
+        db.collection("films")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        Toast.makeText(getApplicationContext(), "0", Toast.LENGTH_SHORT).show();
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                if(document.getData().get("poster").toString() != null
+                                        || document.getData().get("description").toString() != null
+                                        || document.getData().get("poster").toString() != null) {
+                                    Film film = new Film(document.getData().get("name").toString(),
+                                            document.getData().get("description").toString(),
+                                            document.getData().get("poster").toString());
+                                    Log.d("MyLog", "" + film.getName());
+                                    filmList.add(film);
+                                }
+
                             }
+
+                            FilmsAdapter filmsAdapter = new FilmsAdapter(filmList, getApplicationContext());
+                            Log.d("MyLog", "Длина: " + filmList.size());
+                            RecyclerView recyclerView = findViewById(R.id.RecyclerList);
+                            recyclerView.setAdapter(filmsAdapter);
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
                         }
@@ -50,9 +68,7 @@ public class RecyclerFilmListActivity extends AppCompatActivity {
 
         imagePoster = (ImageView) findViewById(R.id.FilmField);
 
-        FilmsAdapter filmsAdapter = new FilmsAdapter();
-        RecyclerView recyclerView = findViewById(R.id.RecyclerList);
-        recyclerView.setAdapter(filmsAdapter);
+
 
         // Create a Cloud Storage reference from the app
         //FirebaseStorage storage = FirebaseStorage.getInstance();

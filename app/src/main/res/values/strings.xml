@@ -3,7 +3,7 @@
     <string name="AppLogo">Домашняя Фильмотека</string>
     <string name="signInLogo">Авторизация</string>
     <string name="allFilms">Все фильмы</string>
-    <string name="favoriteFilms">Избранные фильмы</string>
+    <string name="deleteFilm">Удалить фильм</string>
     <string name="exit">Выйти</string>
     <string name="userFieldLogo">Моя фильмотека</string>
     <string name="registration">Регистрация</string>
@@ -16,4 +16,14 @@
     <string name="adminLogo">Добро пожаловать, товарищ Админ</string>
     <string name="usersList">Пользователи</string>
     <string name="adminBack">Назад</string>
+    <string name="deleteUser">Удалить пользователя</string>
+    <string name="deleteFilmByName">Удалить фильм по названию</string>
+    <string name="FilmNameToDelete">Название фильма</string>
+    <string name="delete">Удалить</string>
+    <string name="LoginToDelete">Логин пользователя</string>
+    <string name="deleteUserByLogin">Удалить пользователя по логину</string>
+    <string name="ConfirmAdminPassword">Пароль администратора</string>
+    <string name="allFilm">Добавить фильм</string>
+    <string name="addFilm">Добавить фильм</string>
+    <string name="setImage">Загрузить картинку</string>
 </resources>

@@ -13,28 +13,73 @@
         android:id="@+id/AdminField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="@string/adminLogo"
-        android:textSize="23dp"
-        android:textColor="@color/parchment"/>
-
-    <Button
-        android:id="@+id/UsersList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/usersList"
-        android:layout_margin="40dp"
+        android:textAlignment="center"
         android:textColor="@color/parchment"
-        android:backgroundTint="@color/chestnutTree"
-        />
+        android:textSize="30dp" />
 
-    <Button
-        android:id="@+id/AdminBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/adminBack"
-        android:textColor="@color/parchment"
-        android:backgroundTint="@color/chestnutTree"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/UsersList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usersList"
+            android:layout_margin="20dp"
+            android:textColor="@color/parchment"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
+            android:id="@+id/DeleteUser"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deleteUser"
+            android:textColor="@color/parchment"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
+            android:id="@+id/AddFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/allFilm"
+            android:textColor="@color/parchment"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
+            android:id="@+id/DeleteFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deleteFilm"
+            android:textColor="@color/parchment"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
+            android:id="@+id/AdminBack"
+            android:layout_margin="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adminBack"
+            android:textColor="@color/parchment"
+            android:backgroundTint="@color/chestnutTree"
+            />
+    </LinearLayout>
+
+
+
+
+
 
 
 </LinearLayout>

@@ -1,12 +1,13 @@
 package com.example.filmlistapp2;
 
 public class Film {
-    private String name, description, poster;
+    private String name, description, poster, id;
 
-    public Film(String name, String description, String poster) {
+    public Film(String name, String description, String poster, String id) {
         this.name = name;
         this.description = description;
         this.poster = poster;
+        this.id = id;
     }
 
     public Film(){
@@ -37,5 +38,13 @@ public class Film {
 
     public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

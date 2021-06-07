@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilmDeleted"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/FilmDeletedLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фильм с указанным названием удалён"
+        android:textColor="@color/parchment"
+        android:textSize="30dp"
+        android:layout_margin="40dp"
+        android:textAlignment="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/FilmDeletedBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adminBack"
+            android:textColor="@color/parchment"
+            android:backgroundTint="@color/chestnutTree"
+            />
+    </LinearLayout>
+
+</LinearLayout>

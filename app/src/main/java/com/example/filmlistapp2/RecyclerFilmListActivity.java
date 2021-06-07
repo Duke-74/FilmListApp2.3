@@ -48,7 +48,8 @@ public class RecyclerFilmListActivity extends AppCompatActivity {
                                         || document.getData().get("poster").toString() != null) {
                                     Film film = new Film(document.getData().get("name").toString(),
                                             document.getData().get("description").toString(),
-                                            document.getData().get("poster").toString());
+                                            document.getData().get("poster").toString(),
+                                            document.getId());
                                     Log.d("MyLog", "" + film.getName());
                                     filmList.add(film);
                                 }

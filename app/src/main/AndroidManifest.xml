@@ -3,6 +3,7 @@
     package="com.example.filmlistapp2">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FilmListApp2">
-        <activity android:name=".AddFilm"></activity>
+        <activity android:name=".FilmDeleted"></activity>
+        <activity android:name=".AddFilmError" />
+        <activity android:name=".AddFilm" />
         <activity android:name=".DeleteUser" />
         <activity android:name=".DeleteFilm" />
         <activity android:name=".RecyclerFilmListActivity" />
@@ -24,6 +27,11 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category  android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>

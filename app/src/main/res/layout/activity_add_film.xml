@@ -18,6 +18,12 @@
         android:textSize="30dp"
         android:layout_margin="50dp"/>
 
+    <ImageView
+        android:id="@+id/addFilmImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,18 +47,8 @@
             android:layout_margin="30dp"/>
 
         <Button
-            android:id="@+id/AddFilm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/addFilm"
-            android:textColor="@color/parchment"
-            android:layout_margin="20dp"
-            android:backgroundTint="@color/chestnutTree"
-            />
-
-        <Button
             android:id="@+id/AddFilmPoster"
-            android:layout_margin="40dp"
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setImage"
@@ -61,8 +57,19 @@
             />
 
         <Button
+            android:id="@+id/AddFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addFilm"
+            android:textColor="@color/parchment"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+
+        <Button
             android:id="@+id/AddFilmBack"
-            android:layout_margin="40dp"
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/adminBack"

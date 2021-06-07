@@ -21,7 +21,7 @@
 
     <EditText
         android:hint="@string/LoginToDelete"
-        android:id="@+id/NameToDelete"
+        android:id="@+id/LoginToDelete"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -26,4 +26,5 @@
     <string name="allFilm">Добавить фильм</string>
     <string name="addFilm">Добавить фильм</string>
     <string name="setImage">Загрузить картинку</string>
+    <string name="addFilmErrorLogo">Фильм с таким названием уже есть в библиотеке</string>
 </resources>

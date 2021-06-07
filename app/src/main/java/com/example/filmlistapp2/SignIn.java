@@ -25,14 +25,19 @@ import java.util.List;
 
 public class SignIn extends AppCompatActivity {
 
+
     Button singInButton, authorizationBack;
     EditText login, password;
     boolean isExist = false;
+    //List<Film> newFilmList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        //Intent intent = getIntent();
+        //newFilmList = intent.getParcelableArrayExtra("filmList");
 
         singInButton = (Button) findViewById(R.id.SignInButton);
         login = (EditText) findViewById(R.id.Login);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFilmError"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/AddFilmError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addFilmErrorLogo"
+        android:textColor="@color/parchment"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_margin="30dp"
+        />
+
+    <Button
+        android:id="@+id/AddFilmErrorBack"
+        android:layout_margin="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adminBack"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/chestnutTree"
+        />
+
+</LinearLayout>

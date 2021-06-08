@@ -35,8 +35,6 @@
             android:backgroundTint="@color/chestnutTree"
             />
 
-
-
         <Button
             android:id="@+id/Exit"
             android:layout_width="wrap_content"

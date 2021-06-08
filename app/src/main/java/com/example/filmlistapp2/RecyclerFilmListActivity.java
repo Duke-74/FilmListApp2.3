@@ -42,7 +42,7 @@ public class RecyclerFilmListActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
                                 if(document.getData().get("poster").toString() != null
                                         || document.getData().get("description").toString() != null
                                         || document.getData().get("poster").toString() != null) {

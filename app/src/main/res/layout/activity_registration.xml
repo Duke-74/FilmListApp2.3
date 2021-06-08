@@ -37,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:hint="@string/registrationPass"
-            android:textColorHint="@color/parchment"/>
+            android:textColorHint="@color/parchment"
+            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/RegistrationPassRep"
@@ -45,7 +46,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:hint="@string/registrationPassRep"
-            android:textColorHint="@color/parchment"/>
+            android:textColorHint="@color/parchment"
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/SignUp"

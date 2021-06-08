@@ -86,56 +86,6 @@ public class DeleteUser extends AppCompatActivity {
                                 }
                             });
 
-                    /*db.collection("films")
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
-                                        if(document.getData().get("poster").toString() != null
-                                                && document.getData().get("description").toString() != null
-                                                && document.getData().get("poster").toString() != null) {
-                                            Film film = new Film(document.getData().get("name").toString(),
-                                                    document.getData().get("description").toString(),
-                                                    document.getData().get("poster").toString(),
-                                                    document.getId());
-                                            Log.d("MyLog", "" + film.getName());
-                                            filmList.add(film);
-                                        }
-
-                                    }
-
-                                    for(Film film : filmList){
-                                        if(film.getName().equals(filmName.getText().toString())){
-                                            db.collection("films").document(film.getId())
-                                                    .delete()
-                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            Log.d("MyLog", "DocumentSnapshot successfully deleted!");
-                                                            Toast.makeText(getApplicationContext(), "Фильм удалён из библиотеки", Toast.LENGTH_LONG).show();
-                                                            Intent intent = new Intent(DeleteFilm.this, AdminField.class);
-                                                            startActivity(intent);
-                                                        }
-                                                    })
-                                                    .addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception e) {
-                                                            Toast.makeText(getApplicationContext(), "Фильма с указанным названием не существует", Toast.LENGTH_LONG).show();
-                                                            Log.w("MyLog", "Error deleting document", e);
-                                                        }
-                                                    });
-                                        }
-                                    }
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });*/
-
                     Intent intent = new Intent(DeleteUser.this, AdminField.class);
                     startActivity(intent);
 
@@ -147,6 +97,7 @@ public class DeleteUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DeleteUser.this, AdminField.class);
+                startActivity(intent);
             }
         });
     }

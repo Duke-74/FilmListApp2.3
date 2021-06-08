@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AdminField extends AppCompatActivity {
 
-    Button adminBack, toUsersList, deleteUser, addFilm, deleteFilm;
+    Button adminBack, toUsersList, deleteUser, addFilm, deleteFilm, filmList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class AdminField extends AppCompatActivity {
         deleteUser = (Button) findViewById(R.id.ToDeleteUser);
         addFilm = (Button) findViewById(R.id.AddFilm);
         deleteFilm = (Button) findViewById(R.id.DeleteFilm);
+        filmList = (Button) findViewById(R.id.AllFilms);
 
 
         adminBack.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +63,14 @@ public class AdminField extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminField.this, DeleteFilm.class);
+                startActivity(intent);
+            }
+        });
+
+        filmList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminField.this, RecyclerFilmListActivity.class);
                 startActivity(intent);
             }
         });

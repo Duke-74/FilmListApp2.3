@@ -17,6 +17,7 @@
         android:text="@string/adminLogo"
         android:textAlignment="center"
         android:textColor="@color/parchment"
+        android:layout_margin="20dp"
         android:textSize="30dp" />
 
     <LinearLayout
@@ -66,8 +67,17 @@
             />
 
         <Button
+            android:id="@+id/AllFilms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/allFilms"
+            android:textColor="@color/parchment"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/chestnutTree"
+            />
+
+        <Button
             android:id="@+id/AdminBack"
-            android:layout_margin="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/adminBack"
@@ -75,11 +85,5 @@
             android:backgroundTint="@color/chestnutTree"
             />
     </LinearLayout>
-
-
-
-
-
-
 
 </LinearLayout>

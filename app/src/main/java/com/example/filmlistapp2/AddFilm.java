@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -89,12 +90,16 @@ public class AddFilm extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
                                     Log.d("MyLog", "film added with ID: " + documentReference.getId());
+                                    Toast.makeText(getApplicationContext(), "Фильм добавлен в библиотеку", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(AddFilm.this, AdminField.class);
+                                    startActivity(intent);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.w("MyLog", "Error adding document", e);
+                                    Toast.makeText(getApplicationContext(), "Данные введены некорректно", Toast.LENGTH_LONG).show();
                                 }
                             });
 

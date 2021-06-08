@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AdminField extends AppCompatActivity {
 
     Button adminBack, toUsersList, deleteUser, addFilm, deleteFilm;
@@ -18,9 +21,10 @@ public class AdminField extends AppCompatActivity {
 
         adminBack = (Button) findViewById(R.id.AdminBack);
         toUsersList = (Button) findViewById(R.id.UsersList);
-        deleteUser = (Button) findViewById(R.id.DeleteUser);
+        deleteUser = (Button) findViewById(R.id.ToDeleteUser);
         addFilm = (Button) findViewById(R.id.AddFilm);
         deleteFilm = (Button) findViewById(R.id.DeleteFilm);
+
 
         adminBack.setOnClickListener(new View.OnClickListener() {
             @Override

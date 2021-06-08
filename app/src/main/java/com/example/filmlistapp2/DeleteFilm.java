@@ -54,10 +54,10 @@ public class DeleteFilm extends AppCompatActivity {
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
                                     for (QueryDocumentSnapshot document : task.getResult()) {
-                                        Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
                                         if(document.getData().get("poster").toString() != null
-                                                || document.getData().get("description").toString() != null
-                                                || document.getData().get("poster").toString() != null) {
+                                                && document.getData().get("description").toString() != null
+                                                && document.getData().get("poster").toString() != null) {
                                             Film film = new Film(document.getData().get("name").toString(),
                                                     document.getData().get("description").toString(),
                                                     document.getData().get("poster").toString(),
@@ -76,11 +76,15 @@ public class DeleteFilm extends AppCompatActivity {
                                                         @Override
                                                         public void onSuccess(Void aVoid) {
                                                             Log.d("MyLog", "DocumentSnapshot successfully deleted!");
+                                                            Toast.makeText(getApplicationContext(), "Фильм удалён из библиотеки", Toast.LENGTH_LONG).show();
+                                                            Intent intent = new Intent(DeleteFilm.this, AdminField.class);
+                                                            startActivity(intent);
                                                         }
                                                     })
                                                     .addOnFailureListener(new OnFailureListener() {
                                                         @Override
                                                         public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(getApplicationContext(), "Фильма с указанным названием не существует", Toast.LENGTH_LONG).show();
                                                             Log.w("MyLog", "Error deleting document", e);
                                                         }
                                                     });
@@ -92,10 +96,6 @@ public class DeleteFilm extends AppCompatActivity {
                                 }
                             }
                         });
-
-                Intent intent = new Intent(DeleteFilm.this, FilmDeleted.class);
-                startActivity(intent);
-
 
             }
         });

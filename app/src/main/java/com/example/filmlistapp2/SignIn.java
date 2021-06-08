@@ -28,7 +28,7 @@ public class SignIn extends AppCompatActivity {
 
     Button singInButton, authorizationBack;
     EditText login, password;
-    boolean isExist = false;
+    boolean isExist = false, isAdmin = false;
     //List<Film> newFilmList = new ArrayList<>();
 
     @Override
@@ -55,7 +55,7 @@ public class SignIn extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("MyLog", document.getId() + " => " + document.getData().get("login"));
-                                User user = new User(document.getData().get("login").toString(), document.getData().get("password").toString());
+                                User user = new User(document.getData().get("login").toString(), document.getData().get("password").toString(), document.getId());
                                 userList.add(user);
                             }
                         } else {
@@ -72,6 +72,7 @@ public class SignIn extends AppCompatActivity {
                     if (login.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
                         Intent intent = new Intent(SignIn.this, AdminField.class);
                         startActivity(intent);
+                        isAdmin = true;
                         break;
                     }
                     if(login.getText().toString().equals(user.getLogin()) && password.getText().toString().equals(user.getPassword())) {
@@ -83,7 +84,7 @@ public class SignIn extends AppCompatActivity {
                     Intent intent = new Intent(SignIn.this, UserField.class);
                     startActivity(intent);
                 }
-                else{
+                if(!isExist && !isAdmin){
                     Toast.makeText(getApplicationContext(), "Логин или пароль не верны", Toast.LENGTH_LONG).show();
                 }
             }

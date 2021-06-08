@@ -41,9 +41,10 @@ public class RecyclerUserListActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
                                 User user = new User(document.getData().get("login").toString(),
-                                        document.getData().get("password").toString());
+                                        document.getData().get("password").toString(),
+                                        document.getId());
                                 Log.d("MyLog", "Длина списка юзеров " + user.getLogin());
                                 userList.add(user);
                             }

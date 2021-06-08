@@ -27,17 +27,8 @@
         android:layout_height="wrap_content"
         android:textColorHint="@color/parchment"/>
 
-    <EditText
-        android:hint="@string/ConfirmAdminPassword"
-        android:id="@+id/ConfirmPass"
-        android:layout_margin="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/parchment"
-        android:inputType="textPassword"/>
-
     <Button
-        android:id="@+id/Delete"
+        android:id="@+id/DeleteUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/delete"

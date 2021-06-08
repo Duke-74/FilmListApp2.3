@@ -1,4 +1,4 @@
-package com.example.filmlistapp2;
+  package com.example.filmlistapp2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteUser extends AppCompatActivity {
 
@@ -27,33 +35,113 @@ public class DeleteUser extends AppCompatActivity {
         deleteUser = (Button) findViewById(R.id.DeleteUser);
         back = (Button) findViewById(R.id.DeleteUserBack);
         loginToDelete = (EditText) findViewById(R.id.LoginToDelete);
-        confirmPass = (EditText) findViewById(R.id.ConfirmPass);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        List<User> userList = new ArrayList<User>();
+
 
         deleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(confirmPass.getText().toString().equals("admin")) {
-                    db.collection("users").document(loginToDelete.getText().toString())
-                            .delete()
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    db.collection("users")
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d("MyLog", "DocumentSnapshot successfully deleted!");
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w("MyLog", "Error deleting document", e);
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                            //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                            if(document.getData().get("login").toString() != null
+                                                    || document.getData().get("password").toString() != null) {
+                                                User user = new User(document.getData().get("login").toString(),
+                                                        document.getData().get("password").toString(),
+                                                        document.getId());
+                                                Log.d("MyLog", "" + user.getLogin());
+                                                userList.add(user);
+                                            }
+
+                                        }
+
+                                        for(User user : userList){
+                                            if(user.getLogin().equals(loginToDelete.getText().toString())){
+                                                db.collection("users").document(user.getId())
+                                                        .delete()
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void aVoid) {
+                                                                Log.d("MyLog", "DocumentSnapshot successfully deleted!");
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(new OnFailureListener() {
+                                                            @Override
+                                                            public void onFailure(@NonNull Exception e) {
+                                                                Log.w("MyLog", "Error deleting document", e);
+                                                            }
+                                                        });
+                                            }
+                                        }
+
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             });
 
+                    /*db.collection("films")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        //Toast.makeText(getApplicationContext(), document.getId(), Toast.LENGTH_SHORT).show();
+                                        if(document.getData().get("poster").toString() != null
+                                                && document.getData().get("description").toString() != null
+                                                && document.getData().get("poster").toString() != null) {
+                                            Film film = new Film(document.getData().get("name").toString(),
+                                                    document.getData().get("description").toString(),
+                                                    document.getData().get("poster").toString(),
+                                                    document.getId());
+                                            Log.d("MyLog", "" + film.getName());
+                                            filmList.add(film);
+                                        }
+
+                                    }
+
+                                    for(Film film : filmList){
+                                        if(film.getName().equals(filmName.getText().toString())){
+                                            db.collection("films").document(film.getId())
+                                                    .delete()
+                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Log.d("MyLog", "DocumentSnapshot successfully deleted!");
+                                                            Toast.makeText(getApplicationContext(), "Фильм удалён из библиотеки", Toast.LENGTH_LONG).show();
+                                                            Intent intent = new Intent(DeleteFilm.this, AdminField.class);
+                                                            startActivity(intent);
+                                                        }
+                                                    })
+                                                    .addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(getApplicationContext(), "Фильма с указанным названием не существует", Toast.LENGTH_LONG).show();
+                                                            Log.w("MyLog", "Error deleting document", e);
+                                                        }
+                                                    });
+                                        }
+                                    }
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });*/
+
                     Intent intent = new Intent(DeleteUser.this, AdminField.class);
                     startActivity(intent);
-                }
+
             }
         });
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
